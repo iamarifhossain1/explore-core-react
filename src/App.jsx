@@ -1,18 +1,45 @@
 
 import './App.css'
+import ToDo from './Todo'
+import Practice from './Practice'
+import Actor from './Actor'
+
 
 function App() {
-
+  // const time = 50;
+  const actors = ['Bappa Raj', 'Omar Sunny', 'Salman Shah', 'Jasim', 'Alamgir'];
   return (
     <>
       <h1>React Core Concept</h1>
-      <Student></Student>
+
+    {
+      actors.map(actor => <Actor actor={actor}></Actor>)
+    }
+
+      {/* <ToDo task="learn-react" isDone={true} time={time}></ToDo>
+      <ToDo task="learn-js" isDone={false}></ToDo>
+      <ToDo task="take a shower" isDone={false}></ToDo>
+      <Practice title="React Start"></Practice>
+      <Practice title="React Learning"></Practice>
+      <Practice title="React Practicing"></Practice> */}
+
+
+      
+      {/* <Student></Student>
       <Person></Person>
       <Developer name="arif" tech="javascript"></Developer>
       <Developer name="hossain" tech="python"></Developer>
       <Device cat="Smartphone" devName="Samsung" price="30000"></Device>
       <Device cat="Laptop" devName="Apple" price="100000"></Device>
       <Device cat="GPU" devName="G-Force" price="60000"></Device>
+      <Player name="Tamim" runs="5000"></Player>
+      <Player name="Mushfiqur" runs="10000"></Player>
+      <Salami name="Eid-Ul-Fitr" amount="1000"></Salami>
+      <Salami name="Eid-Ul-Adha" amount="1500"></Salami>
+      <Books name="Himu" price="200 Taka"></Books>
+      <Books name="Tin Goyenda" price="250 Taka"></Books>
+      <Books name="Podda Nodir Majhi" price="300 Taka"></Books> */}
+      
     </>
   )
 }
@@ -76,5 +103,42 @@ function Device(device) {
     </div>
   )
 }
+// const {name, runs} = {name: 'tamim', runs: '5000'}
+function Player({name, runs}) {
+  return(
+    <div className='student'>
+      <h3>Name: {name}</h3>
+      <p>Runs: {runs}</p>
+    </div>
+  )
+}
+
+function Salami({name, amount}) {
+  return(
+    <div className='student'>
+      <p>Salami For: {name}</p>
+      <p>Amount: {amount}</p>
+    </div>
+  )
+}
+
+function Books({name, price}){
+  const bookStyle = {
+    border: '5px solid blue',
+    borderRadius: '10px',
+    margin: '20px',
+    textAlign: 'left',
+    padding: '10px',
+  }
+  return(
+    <div style={bookStyle}>
+      <h5>Book Name: {name}</h5>
+      <h5>Book Price: {price}</h5>
+    </div>
+  )
+}
+
+
+//  const {name, tech} = {name: 'arif', tech: 'javascript'}
 
 export default App

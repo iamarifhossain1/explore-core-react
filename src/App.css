@@ -41,7 +41,7 @@
   color: #888;
 }
 
-.student {
+.student, .singer {
   border: 2px solid salmon;
   border-radius: 10px;
   padding: 10px;

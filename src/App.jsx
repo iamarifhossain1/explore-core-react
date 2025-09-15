@@ -4,6 +4,7 @@ import ToDo from './Todo'
 import Practice from './Practice'
 import Actor from './Actor'
 import Singer from './Singer'
+import Books from './Books';
 
 
 function App() {
@@ -16,9 +17,21 @@ function App() {
     {id: 3, name: 'Arefin Rumey', age: 45}
   ]
 
+  const books = [
+    {id: 1, BookName: 'Physics', price: 250},
+    {id: 2, BookName: 'Biology', price: 300},
+    {id: 3, BookName: 'Higher Math', price: 350},
+    {id: 4, BookName: 'English', price: 400},
+    {id: 5, BookName: 'Bangla', price: 450},
+  ]
+
   return (
     <>
       <h1>React Core Concept</h1>
+
+      {
+        books.map(book => <Books key={book.id} book={book}></Books>)
+      }
 
     {
       singers.map(singer => <Singer key={singer.id} singer={singer}></Singer>)
@@ -134,21 +147,21 @@ function Salami({name, amount}) {
   )
 }
 
-function Books({name, price}){
-  const bookStyle = {
-    border: '5px solid blue',
-    borderRadius: '10px',
-    margin: '20px',
-    textAlign: 'left',
-    padding: '10px',
-  }
-  return(
-    <div style={bookStyle}>
-      <h5>Book Name: {name}</h5>
-      <h5>Book Price: {price}</h5>
-    </div>
-  )
-}
+// function Books({name, price}){
+//   const bookStyle = {
+//     border: '5px solid blue',
+//     borderRadius: '10px',
+//     margin: '20px',
+//     textAlign: 'left',
+//     padding: '10px',
+//   }
+//   return(
+//     <div style={bookStyle}>
+//       <h5>Book Name: {name}</h5>
+//       <h5>Book Price: {price}</h5>
+//     </div>
+//   )
+// }
 
 
 //  const {name, tech} = {name: 'arif', tech: 'javascript'}
